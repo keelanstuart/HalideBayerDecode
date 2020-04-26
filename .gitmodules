@@ -1,6 +1,0 @@
-[submodule "Halide"]
-	path = Halide
-	url = https://github.com/halide/Halide
-[submodule "LLVM"]
-	path = llvm
-	url = https://github.com/llvm/llvm-project
