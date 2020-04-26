@@ -1,7 +1,6 @@
-# ******************
-
 # HalideBayerDecode
 An experimental Bayer mosaic decoder (raw) written in C++ using Halide
+
 Copyright © 2018-2020, Keelan Stuart
 
 This program is free software: you can redistribute it and/or modify
