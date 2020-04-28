@@ -1,5 +1,5 @@
 # HalideBayerDecode
-An experimental Bayer mosaic decoder (raw) written in C++ using Halide
+An experimental Bayer mosaic decoder written in C++ using Halide
 
 Copyright © 2018-2020, Keelan Stuart
 
@@ -23,16 +23,20 @@ https://github.com/halide/Halide/releases
 
 You'll also need libpng from https://libpng.sourceforge.io (and other mirrors)
 
-You'll need to change this project's settings to indicate the direct you have placed Halide and libpng
+...then you'll need to change this project's settings to indicate the directories where you've placed Halide and libpng
 (currently "d:\proj\halide" and "d:\proj\png", respectively, in "Settings" -> "VC++ Directories")
 
-This makes use to Halide to convert a bayer mosaicked image to RGB
-Algorithm loosely based on the paper by McGuire
+# ****************
+
+This makes use of Halide to convert a bayer mosaicked image to RGB
+using an algorithm loosely based on the paper by Morgan McGuire, available at:
 (https://pdfs.semanticscholar.org/088a/2f47b7ab99c78d41623bdfaf4acdb02358fb.pdf)
 
 I make some assumptions here...
-a) the input is in RG/GB form (as opposed to GR/GB, GB/RG, or BG/GR)
-b) the input image has all three channels, not a single channel
+a) the input is in RGGB form (as opposed to GRGB, GBRG, or BGGR)
+b) the input image has all three channels, not a single channel... this is due
+   to Halide's input model, needing, as far as I can tell, the same formats
+   for across the board
 
 Halide makes some things drastically more complicated because it goes forward from
 the input -- as opposed to working backwards from the output as you might in 3D
